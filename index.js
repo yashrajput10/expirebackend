@@ -9,7 +9,8 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB connection URL (from environment variable)
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = process.env.MONGO_URI + "?connectTimeoutMS=10000&socketTimeoutMS=10000";
+
 
 // Connect to MongoDB
 mongoose.connect(mongoURI)
