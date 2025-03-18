@@ -8,6 +8,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.use(cors({
+  origin: 'https://expfrontend.vercel.app'
+}));
+
+
+
 // MongoDB connection URL (from environment variable)
 const mongoURI = process.env.MONGO_URI + "?connectTimeoutMS=10000&socketTimeoutMS=10000";
 
